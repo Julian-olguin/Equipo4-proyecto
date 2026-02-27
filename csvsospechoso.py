@@ -22,11 +22,13 @@ def generar_datos(n, sospechosos):
         )
         monto = round(random.uniform(10, 2000), 2)
         tipo = random.choice(tipos_op)
-        es_sospechosa = 0
+        es_sospechosa = (
+            1 if i < sospechosos else 0
+        )  # JESUSV 26-02-26 SE MODIFICA PARA QUE SOLO LOS PRIMEROS 15 REGISTROS SEAN SOSPECHOSOS, EL RESTO NO LO SERÁN
 
         # SOFIA CORONEL 26/02/26 Insertar operaciones sospechosas
         if i < sospechosos:
-            es_sospechosa = 1
+            es_sospechosa = 0  # JVR SE CAMBIA A 1 Marca como sospechosa pero no necesariamente lo es, para generar ruido
             # SOFIA CORONEL 26/02/26 Patrón sospechoso: Montos inusualmente altos o transferencias a las 3 AM
             monto = round(random.uniform(10000, 50000), 2)
             tipo = "Transferencia Internacional NO  AUTORIZADA"  # JESUSV 26-02-26 SE MODIFICA EL TIPO DE OPERACION PARA QUE SEA MÁS CLARO QUE ES SOSPECHOSA
