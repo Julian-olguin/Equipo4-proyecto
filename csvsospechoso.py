@@ -4,7 +4,7 @@ import random
 from datetime import datetime, timedelta
 
 
-n_registros = 550  # JESUSV 26-02-26 SE MODIFICA LOS REGISTROS A 550 PARA GENERAR UN POCO MÁS DE 10 DE REGISTROS SOSPECHOSOS
+n_registros = 99999  # JESUSV 26-02-26 SE MODIFICA LOS REGISTROS A 99999 PARA GENERAR UN POCO MÁS DE 10 DE REGISTROS SOSPECHOSOS
 n_sospechosos = (
     15  # SOFIA CORONEL 26/02/26 Generamos un poco más de 10 de registros sospechosos
 )
@@ -16,7 +16,7 @@ def generar_datos(n, sospechosos):
 
     for i in range(n):
         # SOFIA CORONEL 26/02/26 Datos base
-        id_transaccion = f"TRX-{1000 + i}"
+        id_transaccion = f"TRX-{15000 + i}"  # JESUS HIZO LA MODIFICACION A 15000 PARA QUE LOS ID DE TRANSACCION NO SEAN TAN BAJOS Y SE VEAN MÁS REALES
         fecha = datetime(2023, 1, 1) + timedelta(
             days=random.randint(0, 365), hours=random.randint(0, 23)
         )
