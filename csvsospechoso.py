@@ -21,7 +21,9 @@ def generar_datos(n, sospechosos):
             days=random.randint(0, 365), hours=random.randint(0, 23)
         )
         monto = round(random.uniform(10, 2000), 2)
-        tipo = random.choice(tipos_op)
+        tipo = random.choice(
+            tipos_oPP
+        )  # JESUSV 26-02-26 SE MODIFICA PARA QUE LOS TIPOS DE OPERACION SEAN MÁS REALISTAS Y VARIADOS
         es_sospechosa = (
             1 if i < sospechosos else 0
         )  # JESUSV 26-02-26 SE MODIFICA PARA QUE SOLO LOS PRIMEROS 15 REGISTROS SEAN SOSPECHOSOS, EL RESTO NO LO SERÁN
@@ -52,7 +54,10 @@ columnas = [
     "Tipo_Operacion",
     "Es_Sospechosa",
 ]
-df = pd.DataFrame(generar_datos(n_registros, n_sospechosos), columns=columnas)
+df = pd.DataFrame(
+    generar_datos(n_registros, n_sospechosos)(n_registros, n_sospechosos),
+    columns=columnas,
+)  # jesusv se agrego el n_registros y n_sospechosos como argumentos para la función generar_datos para que se puedan modificar fácilmente desde la parte superior del código
 
 # SOFIA CORONEL 26/02/26  Guardar a CSV
 df.to_csv("operaciones_bancarias.csv", index=False)
