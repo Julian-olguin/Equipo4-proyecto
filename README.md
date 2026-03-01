@@ -10,11 +10,6 @@ Este repositorio tiene como finalidad poner en practica el flujo de trabajo cola
 * **Colaborador A:** FRIDA SOFIA CORONEL OLVERA (Encargado de `datos.csv`).
 * **Colaborador B:** JESUS VILLEDA RAMIREZ (Encargado de `analisis.py`).
 
-## Estructura del Mini-Proyecto
-El proyecto constará de los siguientes módulos:
-1.  **`datos.csv`**: Archivo con información ficticia para pruebas.
-2.  **`analisis.py`**: Script de Python que realizará una impresión sencilla en consola.
-
 ##  Reglas de Colaboración (Normativa)
 Para mantener el orden, todos los integrantes deben seguir estas reglas:
 * **Commits:** Usar mensajes claros y descriptivos en GitHub Desktop.
