@@ -4,9 +4,9 @@ import random
 from datetime import datetime, timedelta
 
 
-n_registros = 550  # JESUSV 26-02-26 SE MODIFICA LOS REGISTROS A 550 PARA GENERAR UN POCO MÁS DE 10 DE REGISTROS SOSPECHOSOS
+n_registros = 600 #SOFIA CORONEL 28/02/26 Modifica el numero de registros a 600
 n_sospechosos = (
-    15  # SOFIA CORONEL 26/02/26 Generamos un poco más de 10 de registros sospechosos
+    50  # SOFIA CORONEL 28/02/26 Genero 50 registros sospechosos para generar más ruido en el archivo
 )
 
 
@@ -28,7 +28,7 @@ def generar_datos(n, sospechosos):
 
         # SOFIA CORONEL 26/02/26 Insertar operaciones sospechosas
         if i < sospechosos:
-            es_sospechosa = 0  # JVR SE CAMBIA A 1 Marca como sospechosa pero no necesariamente lo es, para generar ruido
+            es_sospechosa = 1  # # SOFIA CORONEL 28/02/26 Modifico par que los archivos sospechosos sean marcados con el num 1 y sea claro que es un movimiento sospechoso
             # SOFIA CORONEL 26/02/26 Patrón sospechoso: Montos inusualmente altos o transferencias a las 3 AM
             monto = round(random.uniform(10000, 50000), 2)
             tipo = "Transferencia Internacional NO  AUTORIZADA"  # JESUSV 26-02-26 SE MODIFICA EL TIPO DE OPERACION PARA QUE SEA MÁS CLARO QUE ES SOSPECHOSA
