@@ -3,13 +3,12 @@ import numpy as np
 import random
 from datetime import datetime, timedelta
 
-# --- RESOLUCIÓN DEL CONFLICTO ---
-# Se elige la versión de Sofía (600) para pruebas rápidas, 
-# pero mantenemos la lógica de Jesús disponible si se requiere más volumen.
-n_registros = 600  # SOFIA CORONEL 28/02/26 Modifica el numero de registros a 600
-# n_registros = 99999 # JESUSV: Descomentar para pruebas de carga masiva
+# --- RESOLUCIÓN DEL CONFLICTO FINAL ---
+# Integramos la actualización de Jesús (1000 registros) 
+# pero mantenemos la corrección de sintaxis realizada previamente.
 
-n_sospechosos = 50  # SOFIA CORONEL 28/02/26
+n_registros = 1000  # JESUSV 28-02-26 SE MODIFICA LOS REGISTROS A 1000
+n_sospechosos = 100 # JESUS 28/02/26 Generamos un poco más de registros sospechosos
 
 def generar_datos(n, sospechosos):
     data = []
@@ -25,10 +24,11 @@ def generar_datos(n, sospechosos):
         
         monto = round(random.uniform(10, 2000), 2)
         
-        # CORRECCIÓN DE ERROR DE SINTAXIS: decía 'tipos_oPP'
+        # --- AQUÍ MANTENEMOS TU CORRECCIÓN (HEAD) ---
+        # Rechazamos el cambio de JVR porque traía el error 'tipos_oPP'
         tipo = random.choice(tipos_op) 
 
-        # Lógica de sospecha
+        # Lógica de sospecha inicial
         es_sospechosa = 0 
 
         # SOFIA CORONEL 26/02/26 Insertar operaciones sospechosas
