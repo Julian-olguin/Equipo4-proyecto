@@ -4,9 +4,9 @@ import random
 from datetime import datetime, timedelta
 
 
-n_registros = 99999  # JESUSV 26-02-26 SE MODIFICA LOS REGISTROS A 99999 PARA GENERAR UN POCO MÁS DE 10 DE REGISTROS SOSPECHOSOS
+n_registros = 1000  # JESUSV 28-02-26 SE MODIFICA LOS REGISTROS A 10000 PARA GENERAR UN POCO MÁS DE 10 DE REGISTROS SOSPECHOSOS
 n_sospechosos = (
-    15  # SOFIA CORONEL 26/02/26 Generamos un poco más de 10 de registros sospechosos
+    100  # JESUS 28/02/26 Generamos un poco más de 10 de registros sospechosos
 )
 
 
@@ -24,10 +24,7 @@ def generar_datos(n, sospechosos):
         tipo = random.choice(
             tipos_oPP
         )  # JESUSV 26-02-26 SE MODIFICA PARA QUE LOS TIPOS DE OPERACION SEAN MÁS REALISTAS Y VARIADOS
-        es_sospechosa = (
-            1 if i < sospechosos else 0
-        )  # JESUSV 26-02-26 SE MODIFICA PARA QUE SOLO LOS PRIMEROS 15 REGISTROS SEAN SOSPECHOSOS, EL RESTO NO LO SERÁN
-
+        es_sospechosa = 1 if i < sospechosos else 0  # JESUSV 26-02-26 SE QUEDA 0 JVR
         # SOFIA CORONEL 26/02/26 Insertar operaciones sospechosas
         if i < sospechosos:
             es_sospechosa = 0  # JVR SE CAMBIA A 1 Marca como sospechosa pero no necesariamente lo es, para generar ruido
